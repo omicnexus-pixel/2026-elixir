@@ -1,0 +1,31 @@
+# 2026 Elixir projekt — Vírusos genolelemmzések
+
+Ez a gyűjtemény négy virális genom- és transzkriptom-elemzési projektet tartalmaz, mindegyik Makefile-alapú automatizációval.
+
+## Projektek
+
+### 📊 [2026-ebola](2026-ebola)
+Zaire ebolavírus (Mayinga) teljes feldolgozási pipeline: genom letöltés, indexelés, olvasat-illesztés (BWA), és variáns-hívás (bcftools).
+- **Eszközök:** bwa, samtools, bcftools
+- **Futtatás:** `cd 2026-ebola && make all`
+
+### 🦟 [2026-hanta](2026-hanta)
+Hantavírus Maporal genom letöltése és annotáció kicsomagolása.
+- **Eszközök:** curl, gunzip
+- **Kimeneti fájlok:** `hanta_Maporal.fna`, `hanta_Maporal.gff`
+
+### 🔬 [2026-zika](2026-zika)
+Zika Natal vírus genom és GFF-annotáció letöltése.
+- **Eszközök:** curl, gunzip
+- **Kimeneti fájlok:** `Zika_Natal.fna`, `Zika_Natal.gff`
+
+### 📈 [2026-rnaseq](2026-rnaseq)
+RNA-Seq feldolgozási pipeline (HiSat2): indexelés, illesztés, featureCounts számlálás, és differenciális kifejeződés-elemzés (edgeR), PCA és hőtérképes vizualizáció.
+- **Eszközök:** hisat2, featureCounts, R (edgeR, PCA, heatmap)
+- **Futtatás:** `cd 2026-rnaseq && make download && make index && make align && make count && make edger && make pca`
+
+## Gyors indítás
+Nyiss terminált az egyes mappákban és futtasd: `make all` (vagy az adott `make` célt a Read­me-ban).
+
+## További információk
+Minden mappa saját `README` fájllal rendelkezik, amely részletes utasítást tartalmaz az adott projekthez.

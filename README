@@ -20,7 +20,7 @@ Zika Natal vírus genom és GFF-annotáció letöltése.
 - **Kimeneti fájlok:** `Zika_Natal.fna`, `Zika_Natal.gff`
 
 ### 📈 [2026-rnaseq](2026-rnaseq)
-RNA-Seq feldolgozási pipeline (HiSat2): indexelés, illesztés, featureCounts számlálás, és differenciális kifejeződés-elemzés (edgeR), PCA és hőtérképes vizualizáció.
+Humán 22. kromoszóma RNA-Seq feldolgozási pipeline (HiSat2): indexelés, illesztés, featureCounts számlálás, és differenciális kifejeződés-elemzés (edgeR), PCA és hőtérképes vizualizáció.
 - **Eszközök:** hisat2, featureCounts, R (edgeR, PCA, heatmap)
 - **Futtatás:** `cd 2026-rnaseq && make download && make index && make align && make count && make edger && make pca`
 

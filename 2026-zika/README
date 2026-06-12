@@ -1,0 +1,38 @@
+# Zika vírus genom letöltése
+
+Ez a mappa a Zika Natal vírus genomjának és a hozzá tartozó annotációnak a letöltését és kicsomagolását tartalmazza.
+
+## Adatforrások
+- NCBI accession: `GCF_002366285.1`
+- NCBI link: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_002366285.1/
+- Genom FASTA: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/366/285/GCF_002366285.1_ViralProj411812/GCF_002366285.1_ViralProj411812_genomic.fna.gz
+- Annotáció GFF: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/366/285/GCF_002366285.1_ViralProj411812/GCF_002366285.1_ViralProj411812_genomic.gff.gz
+
+## Használat
+Szükséges eszközök: `curl`, `gunzip`
+
+A `Makefile` jelenleg a szükséges letöltési és kicsomagolási lépéseket írja le. A legegyszerűbb mód az, ha a fájl parancsait közvetlenül shellben futtatod.
+
+1. Genom letöltése:
+   ```sh
+   curl "$FASTA_URL" > Zika_Natal.fna.gz
+   ```
+2. Annotáció letöltése:
+   ```sh
+   curl "$GFF_URL" > Zika_Natal.gff.gz
+   ```
+3. Annotáció kicsomagolása:
+   ```sh
+   gunzip Zika_Natal.gff.gz
+   ```
+4. Genom kicsomagolása:
+   ```sh
+   gunzip Zika_Natal.fna.gz
+   ```
+
+## Kimeneti fájlok
+- `Zika_Natal.fna`
+- `Zika_Natal.gff`
+
+## Megjegyzés
+A `Makefile` jelenleg nem definiál explicit `make` célokat és nincs tabulátorral behúzva a recept, ezért ha `make`-ként akarod futtatni, érdemes lehet egy shell scriptet létrehozni vagy a `Makefile`-t célokkal kiegészíteni.

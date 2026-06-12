@@ -1,0 +1,39 @@
+# Hantavírus genom letöltése
+
+Ez a mappa a Hantavírus Maporal genomjának és a hozzá tartozó annotáció kicsomagolásának lépéseit tartalmazza.
+
+## Adatforrások
+- NCBI accession: `GCF_002145825.3`
+- NCBI link: https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_002145825.3/
+- Genom FASTA: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/145/825/GCF_002145825.3_ASM214582v3/GCF_002145825.3_ASM214582v3_genomic.fna.gz
+- Annotáció GFF: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/145/825/GCF_002145825.3_ASM214582v3/GCF_002145825.3_ASM214582v3_genomic.gff.gz
+
+## Használat
+Szükséges eszközök: `curl`, `gunzip`
+
+A `Makefile` jelenleg a letöltés és kicsomagolás lépéseit írja le shell parancsok formájában.
+
+1. Genom letöltése:
+   ```sh
+   curl "$FASTA_URL" > hanta_Maporal.fna.gz
+   ```
+2. Annotáció letöltése:
+   ```sh
+   curl "$GFF_URL" > hanta_Maporal.gff.gz
+   ```
+3. Annotáció kicsomagolása:
+   ```sh
+   gunzip hanta_Maporal.gff.gz
+   ```
+4. Genom kicsomagolása:
+   ```sh
+   gunzip hanta_Maporal.fna.gz
+   ```
+
+## Kimeneti fájlok
+- `hanta_Maporal.fna`
+- `hanta_Maporal.gff`
+
+## Megjegyzés
+A `Makefile` jelenlegi formájában nem definiál klasszikus `make` célokat, ezért a parancsokat közvetlenül shellben is futtathatod.
+

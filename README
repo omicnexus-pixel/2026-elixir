@@ -1,6 +1,6 @@
-# 2026 Elixir projekt — Vírusos genolelemmzések
+# 2026 Elixir projekt — Genom- és transzkriptom-elemzések
 
-Ez a gyűjtemény négy virális genom- és transzkriptom-elemzési projektet tartalmaz, mindegyik Makefile-alapú automatizációval.
+Ez a gyűjtemény három virális genom-elemzési és egy humán transzkriptom-elemzési projektet tartalmaz, mindegyik Makefile-alapú automatizációval.
 
 ## Projektek
 
@@ -25,7 +25,7 @@ Humán 22. kromoszóma RNA-Seq feldolgozási pipeline (HiSat2): indexelés, ille
 - **Futtatás:** `cd 2026-rnaseq && make download && make index && make align && make count && make edger && make pca`
 
 ## Gyors indítás
-Nyiss terminált az egyes mappákban és futtasd: `make all` (vagy az adott `make` célt a Read­me-ban).
+Nyiss terminált az egyes mappákban és futtasd: `make all` (vagy az adott `make` célt a README-ben).
 
 ## További információk
 Minden mappa saját `README` fájllal rendelkezik, amely részletes utasítást tartalmaz az adott projekthez.
